@@ -1,0 +1,23 @@
+{
+	"name": "ts-express-architecture",
+	"version": "1.0.0",
+	"description": "express architecture template with typescript",
+	"main": "server/app.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "tsc && node dist/server"
+	},
+	"keywords": [
+		"architecture"
+	],
+	"author": "changhoi",
+	"license": "ISC",
+	"devDependencies": {
+		"@types/dotenv": "^6.1.1",
+		"@types/express": "^4.17.1"
+	},
+	"dependencies": {
+		"dotenv": "^8.1.0",
+		"express": "^4.17.1"
+	}
+}
