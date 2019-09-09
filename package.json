@@ -5,7 +5,8 @@
 	"main": "server/app.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "tsc && node dist/server"
+		"dev:start": "tsc && node dist/server",
+    "start": "node dist/server"
 	},
 	"keywords": [
 		"architecture"
