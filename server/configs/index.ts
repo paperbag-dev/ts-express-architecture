@@ -1,8 +1,9 @@
 import dotenv from "dotenv";
 import { EnvironmentError } from "../errors";
+import CONSTANTS from "./constants";
+import { Type } from "../types/dbType";
 
 process.env.NODE_ENV = process.env.NODE_ENV || "development";
-
 const env = dotenv.config();
 
 if (!env) {
@@ -10,10 +11,17 @@ if (!env) {
 }
 
 export default {
-	port: process.env.PORT,
-	dbUri: process.env.DB_URI,
-	jwtSecret: process.env.JWT_SECRET,
-	logs: {
-		stage: process.env.LOG_STAGE || "dev"
-	}
+	DB: {
+		HOST: process.env.DB_HOST || "localhost",
+		TYPE: process.env.DB_TYPE as Type,
+		PORT: Number(process.env.DB_PORT) || 5432,
+		USERNAME: process.env.DB_USERNAME || "",
+		PASSWORD: process.env.DB_PASSWORD || "",
+		DATABASE: process.env.DB_NAME || ""
+	},
+	SECRET: process.env.SECRET,
+	PORT: process.env.PORT || 4000,
+	JWT_SECRET: process.env.JWT_SECRET,
+	LOGS_STAGE: process.env.LOG_STAGE || "dev",
+	CONSTANTS
 };
