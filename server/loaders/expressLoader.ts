@@ -13,6 +13,7 @@ export default async (app: express.Application): Promise<void> => {
 	app.use(cookieParser(config.SECRET));
 	app.use(
 		session({
+			saveUninitialized: false,
 			secret: config.SECRET as string,
 			resave: false,
 			cookie: { secure: false, httpOnly: false }

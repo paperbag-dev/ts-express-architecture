@@ -1,6 +1,6 @@
 import config from "./configs";
 import { ConnectionOptions } from "typeorm";
-import { IDbConfig } from "./interfaces/dbConfigInterface";
+import { IDbConfig } from "./interfaces/dbConfigInterfaces";
 
 const { DB }: IDbConfig = config;
 
@@ -9,11 +9,11 @@ const ormConfig: ConnectionOptions = {
 	host: DB.HOST,
 	port: DB.PORT,
 	username: DB.USERNAME,
-	password: DB.PASSWORD,
+	//password: DB.PASSWORD,
 	database: DB.DATABASE,
 	synchronize: true,
 	logging: true,
-	entities: ["./models/entities/**/*.ts"],
+	entities: [__dirname + "/models/entities/*.entity.ts"],
 	migrations: ["./models/migration/**/*.ts"],
 	subscribers: ["./subscriber/**/*.ts"]
 };
