@@ -24,7 +24,7 @@
 		"helmet": "^3.21.0",
 		"morgan": "^1.9.1",
 		"pg": "^7.12.1",
-		"typeorm": "^0.2.18"
+		"typeorm": "^0.2.25"
 	},
 	"devDependencies": {
 		"@types/chai": "^4.2.2",
